@@ -1,0 +1,115 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #f3f7ff, #ffffff);
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
+}
+
+header {
+  text-align: center;
+  background: #407be7;
+  color: white;
+  padding: 20px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.card {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 800px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #34495e;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+input, select, button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+button {
+  background: #407be7;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #295ed6;
+  transform: scale(1.05);
+}
+
+.filters div {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.filter-btn {
+  background: #ddd;
+  border: none;
+  padding: 8px 14px;
+  margin: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: #407be7;
+  color: white;
+}
+
+#expenseChart, #compareChart {
+  max-width: 100%;
+  height: 300px;
+  margin-top: 10px;
+}
+
+.summary #summary-content {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.compare-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  color: #777;
+  font-size: 14px;
+}
