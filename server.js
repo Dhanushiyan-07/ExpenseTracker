@@ -1,13 +1,15 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
-require('dotenv').config(); // Load .env variables
+require('dotenv').config();
 
 const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+
+// ✅ Serve static files (HTML, CSS, JS) from the current directory
+app.use(express.static(__dirname));
 
 // ✅ Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
@@ -60,15 +62,11 @@ app.delete('/api/expenses/:id', async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("✅ Expense Tracker API is running successfully!");
+// ✅ Serve index.html when visiting "/"
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-
-// ✅ Start server
-const PORT = 3000;
-app.listen(PORT, () =>
-  console.log(`✅ Server running at http://localhost:${PORT}`)
-);
-
-
+// ✅ Start server (Render uses process.env.PORT)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
