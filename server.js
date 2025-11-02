@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.error('❌ MongoDB connection error:', err));
 
 // ✅ Import Expense model
-const Expense = require('./models/Expense');
+const Expense = require('./Expense');
 
 // ✅ Get all expenses
 app.get('/api/expenses', async (req, res) => {
@@ -65,3 +65,4 @@ const PORT = 3000;
 app.listen(PORT, () =>
   console.log(`✅ Server running at http://localhost:${PORT}`)
 );
+
