@@ -60,9 +60,15 @@ app.delete('/api/expenses/:id', async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("✅ Expense Tracker API is running successfully!");
+});
+
+
 // ✅ Start server
 const PORT = 3000;
 app.listen(PORT, () =>
   console.log(`✅ Server running at http://localhost:${PORT}`)
 );
+
 
